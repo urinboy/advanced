@@ -53,7 +53,7 @@ return [
 
         'urlManager' => [
             'scriptUrl'=>'/index.php',
-//            'class' => 'codemix\localeurls\UrlManager',
+            'class' => 'codemix\localeurls\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
