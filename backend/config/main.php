@@ -17,6 +17,18 @@ return [
             'baseUrl'=>'/dashboard',
             'csrfParam' => '_csrf-backend',
         ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                ],
+            ],
+        ],
+        'language' => function () {
+            $language = Yii::$app->session->get('language', 'uz'); // default tilni o'rnatish
+            return $language;
+        },
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
@@ -40,11 +52,13 @@ return [
         ],
 
         'urlManager' => [
-            'scriptUrl'=>'/dashboard/index.php',
+            'scriptUrl'=>'/index.php',
+//            'class' => 'codemix\localeurls\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
+            'languages' => ['uz', 'ru', 'en', 'kaa'],
         ],
 
     ],

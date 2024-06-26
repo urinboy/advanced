@@ -7,7 +7,7 @@
 use yii\bootstrap5\ActiveForm;
 use yii\bootstrap5\Html;
 
-$this->title = 'Login';
+$this->title = Yii::t('app', 'Kirish');
 ?>
 <div class="site-login">
     <div class="row  justify-content-center">
@@ -17,9 +17,11 @@ $this->title = 'Login';
                             <div class="card-body">
 
                                 <div class="text-center">
-                                    <h1><?= Html::encode($this->title) ?></h1>
+                                    <p><img style="width:100px" src="<?= Yii::t('app', "/logos/karsu_moodle-UZ.png") ?>" alt="<?= Yii::t('app', "Masodfaviy Ta'lim") ?>"></p>
 
-                                    <p>Please fill out the following fields to login:</p>
+<!--                                    <h1>--><?php //= Html::encode($this->title) ?><!--</h1>-->
+
+                                    <p class="lead"><?= Yii::t('app', 'Platformamizga hush kelibsiz!') ?></p>
                                 </div>
 
                                 <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
@@ -37,12 +39,6 @@ $this->title = 'Login';
                                 <?php ActiveForm::end(); ?>
                             </div>
                         </div>
-                <div class="row">
-                    <div class="col-lg-6">
-
-                    </div>
-                </div>
-
             </div>
 
     </div>

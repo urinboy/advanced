@@ -4,13 +4,14 @@
 
 use yii\helpers\Html;
 
-$this->title = 'About';
+$this->title = Yii::t('app', 'Biz haqimizda');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
+        <h1 class="text-center"><?= Html::encode($this->title) ?></h1>
 
-    <p>This is the About page. You may modify the following file to customize its content:</p>
-
-    <code><?= __FILE__ ?></code>
+    <div class="jumbotron text-center bg-transparent mt-5 mb-5">
+        <p><img style="width:300px" src="<?= Yii::t('app', "/logos/karsu_moodle-UZ.png") ?>" alt="<?= Yii::t('app', "Masodfaviy Ta'lim") ?>"></p>
+        <h1 class="display-4"><?= Yii::t('app', "Masofaviy Ta'lim") ?></h1>
+    </div>
 </div>

@@ -10,13 +10,25 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'name' => 'Dist Karsu',
+    'name' => "Masofaviy Ta'lim",
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
             'baseUrl'=>'',
             'csrfParam' => '_csrf-frontend',
         ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                ],
+            ],
+        ],
+        'language' => function () {
+            $language = Yii::$app->session->get('language', 'uz'); // default tilni o'rnatish
+            return $language;
+        },
         'assetManager' => [
             'basePath' => '@webroot/assets',
             'baseUrl' => '@web/assets',
@@ -45,15 +57,14 @@ return [
 
         'urlManager' => [
             'scriptUrl'=>'/index.php',
-//            'enablePrettyUrl' => true,
-//            'showScriptName' => false,
-
+            'class' => 'codemix\localeurls\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'enableStrictParsing' => false,
 
             'rules' => [
             ],
+            'languages' => ['uz', 'ru', 'en', 'kaa'],
         ],
 
     ],
